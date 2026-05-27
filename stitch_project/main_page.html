@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kamen Rider - Main Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@600&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#353534",
+                        "outline": "#af8782",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "tertiary-fixed": "#7df4ff",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed-variant": "#930007",
+                        "on-secondary-fixed-variant": "#574500",
+                        "secondary-fixed-dim": "#e9c349",
+                        "tertiary-container": "#007f87",
+                        "outline-variant": "#5f3f3b",
+                        "on-primary": "#690003",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#e9bcb6",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#342800",
+                        "secondary-container": "#af8d11",
+                        "primary-container": "#e60012",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed": "#ffe088",
+                        "background": "#131313",
+                        "on-primary-container": "#fff7f6",
+                        "on-secondary": "#3c2f00",
+                        "secondary": "#e9c349",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#ffdad5",
+                        "on-primary-fixed": "#410001",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-background": "#e5e2e1",
+                        "primary": "#ffb4aa",
+                        "surface-bright": "#393939",
+                        "on-tertiary-container": "#e8fdff",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-tint": "#ffb4aa",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#00dbe9",
+                        "inverse-primary": "#c0000d",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#00363a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "section-gap": "48px",
+                        "stack-sm": "8px",
+                        "container-margin": "20px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Anton"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Anton"],
+                        "display-hero": ["Anton"],
+                        "label-tech": ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "36px", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "32px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "28px", fontWeight: "400" }],
+                        "display-hero": ["48px", { lineHeight: "52px", letterSpacing: "0.02em", fontWeight: "400" }],
+                        "label-tech": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .light-leak-border {
+            border-top: 1px solid rgba(255, 180, 170, 0.3);
+            border-left: 1px solid rgba(255, 180, 170, 0.3);
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+        }
+        .hero-glow {
+            box-shadow: 0 0 40px rgba(230, 0, 18, 0.4);
+        }
+        .btn-scan {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-scan::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-20deg);
+            animation: scan-light 3s infinite;
+        }
+        @keyframes scan-light {
+            0% { left: -100%; }
+            20% { left: 200%; }
+            100% { left: 200%; }
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .angled-bg {
+            transform: skewY(-3deg);
+        }
+        .angled-content {
+            transform: skewY(3deg);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden pt-16 pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,180,170,0.2)]">
+<div class="flex items-center justify-between px-container-margin h-16 max-w-7xl mx-auto w-full">
+<button class="text-on-surface hover:text-primary transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-wider uppercase md:font-headline-lg md:text-headline-lg">KAMEN RIDER</h1>
+<div class="w-6 hidden md:flex items-center space-x-gutter">
+<a class="font-label-tech text-label-tech text-primary uppercase" href="#">Home</a>
+<a class="font-label-tech text-label-tech text-on-surface hover:text-primary transition-colors uppercase" href="#">Series</a>
+<a class="font-label-tech text-label-tech text-on-surface hover:text-primary transition-colors uppercase" href="#">Shop</a>
+</div>
+<button class="md:hidden text-on-surface w-6"></button> <!-- Spacer for mobile centering -->
+</div>
+</header>
+<main class="w-full max-w-7xl mx-auto flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full relative h-[618px] min-h-[500px] flex items-end pb-stack-lg px-container-margin mb-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Kamen Rider Hero" class="w-full h-full object-cover object-top opacity-60" data-alt="A dynamic, high-contrast shot of a futuristic armored hero standing amidst a city landscape at night. The lighting is intense with glowing neon red and cyan accents cutting through deep black shadows. The armor features sharp, angular metallic plates and glowing visor eyes, exuding a sense of technological power and justice in a cyberpunk-inspired dark mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TS75VJJe9zbf4B8UBp1qrv8zO64bvM5oJQ1qvXLBc_xxH4Beeqz4xJEl-hdqd9Tj8NcFrmQ9IdxjYvUlOruw1UL5V2-ZfD3M_2xUcSmItblYXHUKxfOTld89551AizbSjaOcbOxLvlKwk71Tiud0KJiwK8-d8oRncc9ngKrF5IS0sy1Wf-CvbOgAWMLlJYBc67VaFzsQfFXa98-ditw_knoGcTVCaQXmVQLdHINCOjN4giJ7B4M-_Iu43hDf6qSHwa096Z6N8IWP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full md:max-w-2xl">
+<div class="inline-block bg-surface-container/80 backdrop-blur-md px-3 py-1 rounded-sm border-l-2 border-primary mb-stack-sm">
+<span class="font-label-tech text-label-tech text-tertiary">SYSTEM: ONLINE // 2024</span>
+</div>
+<h2 class="font-display-hero text-display-hero text-on-primary-container mb-stack-md drop-shadow-xl">JUSTICE AWAKENS</h2>
+<button class="w-full md:w-auto px-8 py-4 bg-primary-container text-on-primary-container font-headline-md text-headline-md uppercase btn-scan rounded-DEFAULT shadow-[0_0_20px_rgba(230,0,18,0.3)] hover:shadow-[0_0_30px_rgba(230,0,18,0.5)] transition-shadow active:scale-95">
+                    Watch Now
+                </button>
+</div>
+</section>
+<!-- Quick Access Bento Grid -->
+<section class="w-full px-container-margin mb-section-gap">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="col-span-2 md:col-span-2 bg-surface-container-high/80 backdrop-blur-md p-stack-md rounded-lg light-leak-border relative overflow-hidden group cursor-pointer hover:bg-surface-bright/50 transition-colors">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-primary/20 transition-colors"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-2 block" data-icon="database">database</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Rider Database</h3>
+<p class="font-label-tech text-label-tech text-outline mt-2">ACCESS SECURE FILES</p>
+</div>
+<div class="bg-surface-container/80 backdrop-blur-md p-stack-md rounded-lg light-leak-border relative overflow-hidden group cursor-pointer hover:bg-surface-bright/50 transition-colors flex flex-col justify-between">
+<span class="material-symbols-outlined text-3xl text-tertiary block" data-icon="bolt">bolt</span>
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mt-stack-sm">Transformation Guide</h3>
+</div>
+</div>
+<div class="bg-surface-container/80 backdrop-blur-md p-stack-md rounded-lg light-leak-border relative overflow-hidden group cursor-pointer hover:bg-surface-bright/50 transition-colors flex flex-col justify-between">
+<span class="material-symbols-outlined text-3xl text-secondary block" data-icon="event">event</span>
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mt-stack-sm">Live Events</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News Angled Section -->
+<section class="w-full relative py-section-gap mb-section-gap">
+<div class="absolute inset-0 bg-surface-container-low angled-bg -z-10 border-t border-b border-outline-variant/20"></div>
+<div class="px-container-margin angled-content">
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface uppercase border-l-4 border-primary pl-3 md:font-headline-lg md:text-headline-lg">Latest Intel</h2>
+<a class="font-label-tech text-label-tech text-primary hover:text-tertiary transition-colors" href="#">VIEW ALL //</a>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar space-x-gutter pb-4 snap-x snap-mandatory">
+<!-- Card 1 -->
+<div class="flex-none w-72 md:w-80 bg-surface-container-highest rounded-lg overflow-hidden light-leak-border snap-start relative group">
+<div class="h-40 relative overflow-hidden">
+<img alt="Episode 14" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wide cinematic shot of two armored figures clashing in a desolate, rocky quarry. Bright crimson sparks fly from the impact of their metallic weapons against the dark, moody background. The scene emphasizes high-contrast lighting, a dynamic heroic composition, and a gritty, high-tech aesthetic typical of a dark mode futuristic UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwsaINHRh60qJJeWLHBZOi07kIcy6g0AwmyGETgsfj68om0_IdEiQkXHaocec38UU3rrNlQ0v0DC67u1g-7r0S57KWH0yNUtO8o2VOVKhlQhrZqXpelH6_Pely1lTEYyshlV1i9N6PUKS2Z4fbDVlNG9SMFrNbOf5uJX4cS9YDD7JL78PvyVPnmmg3EY6keOx0EcebHzEERrEjfkI3oarQPuEkh_acEFLpVpA5RiJRgxD47_SUmdyZi33En75AtnU-OzIm1-906Zzn"/>
+<div class="absolute bottom-2 left-2 bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded font-label-tech text-label-tech text-tertiary">EP 14</div>
+</div>
+<div class="p-stack-md relative z-10 bg-gradient-to-t from-surface-container-highest to-surface-container-highest/90">
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-2">The Crimson Flash! New Form Unveiled</h3>
+<p class="font-label-tech text-label-tech text-outline">STREAMING NOW</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-72 md:w-80 bg-surface-container-highest rounded-lg overflow-hidden light-leak-border snap-start relative group">
+<div class="h-40 relative overflow-hidden">
+<img alt="Movie Announcement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dramatic poster for a futuristic movie featuring a massive mechanical belt buckle glowing with intensely bright cyan and gold light in the center. The background is a sleek, dark metallic surface with faint technical grid lines. The lighting is cinematic, creating a sense of impending power and high-stakes action within a sleek dark theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbVxOkzuNvygActp9GyiDRb8RvVblE5xEXmEZCcVw_DAFzDR2CSNuTSTcxdCZ2Nw-WMtNLxqczITxtjPCGs4QYQ15q3qMA4-KhpgXnZsgg_AWcQrZOFdohU1D1U98G0kytyOotGrBHIN6qO3OZzc0UF6fdqrteNc1a33lq38ST6e7HAxnl6jHIVimo76iddmQnw7FeDlD7hRfnu3JXv5yZk_-0cjpJksbTVyH1NM1Qe_Kle9-07iyqV_xkWWb5NmSUi_oTlMYaX-Td"/>
+<div class="absolute bottom-2 left-2 bg-primary/90 backdrop-blur-sm px-2 py-0.5 rounded font-label-tech text-label-tech text-on-primary">THEATRICAL</div>
+</div>
+<div class="p-stack-md relative z-10 bg-gradient-to-t from-surface-container-highest to-surface-container-highest/90">
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-2">Kamen Rider: The Last Judgment Movie Announced</h3>
+<p class="font-label-tech text-label-tech text-outline">WINTER 2024</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex-none w-72 md:w-80 bg-surface-container-highest rounded-lg overflow-hidden light-leak-border snap-start relative group">
+<div class="h-40 relative overflow-hidden bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-surface-bright" data-icon="smart_toy">smart_toy</span>
+<div class="absolute bottom-2 left-2 bg-secondary/90 backdrop-blur-sm px-2 py-0.5 rounded font-label-tech text-label-tech text-on-secondary">MERCH</div>
+</div>
+<div class="p-stack-md relative z-10 bg-gradient-to-t from-surface-container-highest to-surface-container-highest/90">
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-2">Premium DX Driver Pre-orders Open</h3>
+<p class="font-label-tech text-label-tech text-outline">LIMITED STOCK</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full mt-section-gap border-t-2 border-primary flat flex flex-col items-center p-stack-lg space-y-stack-md pb-32">
+<h2 class="font-headline-md text-headline-md text-primary uppercase">KAMEN RIDER</h2>
+<div class="flex flex-wrap justify-center gap-gutter font-label-tech text-label-tech text-on-surface-variant">
+<a class="hover:text-tertiary transition-colors underline-offset-4 hover:underline uppercase" href="#">Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors underline-offset-4 hover:underline uppercase" href="#">Terms of Service</a>
+<a class="hover:text-tertiary transition-colors underline-offset-4 hover:underline uppercase" href="#">Contact Support</a>
+<a class="hover:text-tertiary transition-colors underline-offset-4 hover:underline uppercase" href="#">Fan Kit</a>
+</div>
+<p class="font-label-tech text-label-tech text-outline text-center mt-stack-md">© ISHIMORI PRODUCTION INC. AND TOEI COMPANY, LTD.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container dark:bg-surface-container-lowest backdrop-blur-xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-primary/20 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary/10 rounded-xl p-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-tech text-label-tech mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 active:scale-90 transition-transform duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="movie">movie</span>
+<span class="font-label-tech text-label-tech mt-1">Series</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 active:scale-90 transition-transform duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-tech text-label-tech mt-1">Shop</span>
+</a>
+</nav>
+</body></html>
